@@ -2,34 +2,48 @@
 <br>
 1. Select Data from a Table
 <br>
+<br>
 SELECT * FROM sales;
+<br>
 <br>
 This retrieves all columns from the sales table.
 <br>
 <br>
 2. Filter Data Using WHERE
 <br>
+<br>
 SELECT * FROM sales
 <br>
-WHERE sale_date >= '2024-01-01' AND sale_date <= '2024-12-31';
+WHERE sale_date >= '2024-01-01' AND
+<br>
+sale_date <= '2024-12-31';
+  <br>
   <br>
 Filters records for the year 2024.
 <br>
 <br>
 3. Aggregate Data (SUM, AVG, COUNT, etc.)
 <br>
+  <br>
 SELECT 
+  <br>
     product_id,
+  <br>
     SUM(sale_amount) AS total_sales,
+  <br>
     COUNT(*) AS total_transactions
+  <br>
 FROM sales
+  <br>
 GROUP BY product_id;
+  <br>
 <br>
 Gives total sales and transaction count per product.
 <br>
 <br>
 4. Order Results
 <br>
+  <br>
 SELECT product_id, SUM(sale_amount) AS total_sales
 FROM sales
 GROUP BY product_id
@@ -52,7 +66,7 @@ JOIN products p ON s.product_id = p.product_id;
 Combines data from sales and products to include product names.
 <br>
 <br>
-6. Use Subqueries
+6. Use2555555544 Subqueries
 <br>
 SELECT product_id, sale_amount
 FROM sales
