@@ -44,46 +44,78 @@ Gives total sales and transaction count per product.
 4. Order Results
 <br>
   <br>
-SELECT product_id, SUM(sale_amount) AS total_sales
+SELECT product_id, SUM(sale_amount)
+  <br>
+  AS total_sales
+  <br>
 FROM sales
+  <br>
 GROUP BY product_id
+  <br>
 ORDER BY total_sales DESC;
 <br>
+  <br>
 Sorts products by total sales in descending order.
 <br>
 <br>
 5. Join Tables
 <br>
+  <br>
 Assume we have a products table and sales table.
 <br>
+  <br>
 SELECT 
+  <br>
     p.product_name,
+  <br>
     s.sale_amount,
+  <br>
     s.sale_date
+  <br>
 FROM sales s
-JOIN products p ON s.product_id = p.product_id;
+  <br>
+JOIN products p ON s.product_id =
+  <br>
+  p.product_id;
+  <br>
 <br>
 Combines data from sales and products to include product names.
 <br>
 <br>
-6. Use2555555544 Subqueries
+6. Use Subqueries
 <br>
+  <br>
 SELECT product_id, sale_amount
+  <br>
 FROM sales
+  <br>
 WHERE sale_amount > (
-    SELECT AVG(sale_amount) FROM sales
+  <br>
+    SELECT AVG(sale_amount) FROM
+  <br>
+  sales
+  <br>
 );
 <br>
+  <br>
 Find sales with above- average amounts.
 <br>
 <br>
 7. Date Functions
 <br>
+  <br>
 SELECT 
+  <br>
     MONTH(sale_date) AS month,
-    SUM(sale_amount) AS monthly_sales
+  <br>
+    SUM(sale_amount) AS 
+  <br>
+  monthly_sales
+  <br>
 FROM sales
+  <br>
 GROUP BY MONTH(sale_date);
 <br>
+  <br>
 Summarizes monthly sales totals.
 
